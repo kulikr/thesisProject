@@ -1,9 +1,13 @@
+import datetime
 import json as jsn
 import csv
 import pandas as pd
 import os
 import pickle
 import time
+import redis
+import socket
+
 
 
 def convertDateToString(o):
@@ -30,12 +34,20 @@ def sessionsToDf(sessions,fileEnding):
         dict_writer.writerows(sessions)
 
 
+def writeSessionsToDb(sessions,month):
+    server= getServer(6379,month)
+    for user, userSessions in sessions.items():
+        saveUserSessionToDb(user,userSessions,month)
+    server.save()
+
+
+
 def writeSessionsDataToCsv(sessions):
     randomSession = sessions[0]
     filePath = './TmpFiles/sessions_events_dist_'+str(randomSession['lastEvent'].month )
     fileExists = os.path.isfile(filePath)
 
-    sessions=pd.DataFrame(sessions)
+    sessions = pd.DataFrame(sessions)
 
     if not fileExists:
         sessions.to_csv(filePath, header=True, index=False, mode='w')
@@ -56,7 +68,6 @@ def splitMonthData(path):
                             new_f2.write(line)
 
                         i += 1
-
 
 
 def writeUsersEventsDistToCsv(usersEventsPerSession, month):
@@ -127,3 +138,24 @@ def getCurrentMonth():
         splitted_filename = filename.split('_')
         if(filename.split('_')[0]=="sessions"):
             return splitted_filename[3]
+
+def getServer(port, db_num):
+    r = redis.StrictRedis(host='localhost', port=port, db=db_num)
+    return r
+
+def saveUserSessionToDb(userId ,userSessions, server):
+    pickled_objects=[]
+    pipe = server.pipeline()
+    for session in userSessions:
+        pickled_object = pickle.dumps(session)
+        pipe.rpush(userId,pickled_object)
+
+    pipe.execute()
+
+def getUserSessionsFromDb(userId, server):
+    elements = server.lrange(userId, 0, -1)
+    sessions = []
+    for element in elements:
+        session = pickle.loads(element)
+        sessions.append(session)
+    return sessions
