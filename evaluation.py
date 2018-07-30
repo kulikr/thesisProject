@@ -243,6 +243,7 @@ def isTemporaryUser(username):
         return True
     return False
 
+
 def calculateAvgIteratively(new_N, current_avg, to_be_added):
     if (new_N > 1):
         newAverage = ( current_avg * (new_N - 1) / new_N ) + ( to_be_added / new_N )
@@ -252,4 +253,355 @@ def calculateAvgIteratively(new_N, current_avg, to_be_added):
 
 
 
+def evaluateWithDb(server, month):
+    fileName = "numOfCategoriesInBasketDist"
+    basketAndBuySessionsDist,regAndTmpCount = initBB_dict()
+    cursor, sessionBatch = utl.readKeysBatchFromServer(0)
+    keys = encodeKeys(sessionBatch)
+    regUsersSessions, tmpUsersSessions = utl.getValuesFromDb(keys,server)
+    print(regUsersSessions[0])
 
+    numOfCategoriesDict = {}
+    initNumOfCategoriesDict(numOfCategoriesDict)
+
+    categoriesDistDict = {}
+    initCategoriesDistDict(categoriesDistDict)
+
+    updateNumOfCategoriesDict(categoriesDistDict,numOfCategoriesDict,regUsersSessions,tmpUsersSessions)
+    resDict = {}
+    initResDict(resDict)
+
+    # the session length distribution for both registered and temporary users
+    updateSessionLengthDict(resDict,regUsersSessions,tmpUsersSessions)
+
+    #Distribution of basket sessions by user type, weekday, hour.
+    updateWithBatchData(basketAndBuySessionsDist, regAndTmpCount, regUsersSessions, tmpUsersSessions)
+
+    #generic try
+    # updateBatchSessions(resDict, regUsersSessions, tmpUsersSessions)
+
+
+    batchCount = 0
+    while cursor != 0:
+        try:
+            cursor,sessionBatch=utl.readKeysBatchFromServer(cursor)
+            keys = encodeKeys(sessionBatch)
+            if cursor == 0:
+                break
+
+            regUsersSessions, tmpUsersSessions = utl.getValuesFromDb(keys, server)
+
+            updateNumOfCategoriesDict(categoriesDistDict,numOfCategoriesDict, regUsersSessions, tmpUsersSessions)
+            updateWithBatchData(basketAndBuySessionsDist, regAndTmpCount, regUsersSessions, tmpUsersSessions)
+            updateSessionLengthDict(resDict,regUsersSessions,tmpUsersSessions)
+        except Exception as e:
+            print(e)
+        batchCount+=1
+        print("batch number is : "+str(batchCount))
+    utl.writeDictToFile(numOfCategoriesDict,"numOfCategoriesInSessions_"+month+".json")
+    utl.writeDictToFile(categoriesDistDict,"categoriesDistInSessions"+month+".json")
+    utl.writeDictToFile(basketAndBuySessionsDist,"basketAndBuyDist"+month+".json")
+    utl.writeDictToFile(regAndTmpCount, "count"+month+".json")
+    return numOfCategoriesDict, categoriesDistDict
+
+
+def encodeKeys(byteKeys):
+    strKeys = []
+    for key in byteKeys:
+        strKeys.append(key.decode("UTF-8"))
+    return strKeys
+
+
+
+def initBB_dict():
+    basketAndBuySessionDist = {}
+    regAndTmpCount = {}
+
+    regAndTmpCount['tmpUsers']=0
+    regAndTmpCount['regUsers']=0
+    regAndTmpCount['regSessions']=0
+    regAndTmpCount['tmpSessions']=0
+    regAndTmpCount['regAvgSessionLength']=0
+    regAndTmpCount['tmpAvgSessionLength'] = 0
+    regAndTmpCount['regAvgNumOfSessions'] = 0
+    regAndTmpCount['regAvgTotalDwell']=0
+    regAndTmpCount['regAvgAvgDwell']=0
+
+
+    hourbins = 24
+
+
+    for userType in ['reg', 'tmp']:
+        basketAndBuySessionDist[userType] = {}
+        for sessionType in ['basket', 'basket_buy', 'basket_noBuy']:
+            basketAndBuySessionDist[userType][sessionType] = {}
+            basketAndBuySessionDist[userType][sessionType]["weekday"] = {}
+            basketAndBuySessionDist[userType][sessionType]["hour"] = {}
+            basketAndBuySessionDist[userType][sessionType]["count"] = 0
+            basketAndBuySessionDist[userType][sessionType]["avgDwell"] = 0
+            basketAndBuySessionDist[userType][sessionType]["totalDwell"] = 0
+            for i in range(7):
+                basketAndBuySessionDist[userType][sessionType]["weekday"][str(i)] = 0
+            for j in range(hourbins):
+                basketAndBuySessionDist[userType][sessionType]["hour"][str(j)] = 0
+
+    return basketAndBuySessionDist, regAndTmpCount
+
+
+#updates the evaluation with current batch data
+def updateSessionLengthDict(sessionLengthDict, regUsersSessions, tmpUsersSessions):
+
+    #iterate temporary users sessions
+    for user in tmpUsersSessions:
+        for session in user:
+            if session['isBasketSession']:
+                if session['isBuySession']:
+                    sessionType='buy'
+                else:
+                    sessionType='noBuy'
+
+                updateSessionLengthBySessionType(sessionLengthDict['basket']['tmp'],sessionType,session['numOfEvents'])
+            updateSessionLengthForUserType(sessionLengthDict['tmp'],session['numOfEvents'])
+
+    #iterate registered users sessions
+    for user in regUsersSessions:
+        for session in user:
+            if session['isBasketSession']:
+                if session['isBuySession']:
+                    sessionType = 'buy'
+                else:
+                    sessionType = 'noBuy'
+
+                updateSessionLengthBySessionType(sessionLengthDict['basket']['reg'], sessionType, session['numOfEvents'])
+            updateSessionLengthForUserType(sessionLengthDict['reg'], session['numOfEvents'])
+
+
+#updates the evaluation with current batch data
+def updateNumOfCategoriesDict(categoriesDistDict,numOfCategoriesDict, regUsersSessions, tmpUsersSessions):
+
+    #iterate temporary users sessions
+    for user in tmpUsersSessions:
+        sessionType = ""
+        for session in user:
+            isBuySession = session['isBuySession']
+            categoriesSet =set(session['category2Vector'])
+            if session['isBasketSession']:
+                if session['isBuySession']:
+                    sessionType='buy'
+                else:
+                    sessionType='noBuy'
+            else:
+                sessionType = 'other'
+
+            updateNumOfBasketCategoriesBySessionType(numOfCategoriesDict['tmp'], sessionType,isBuySession, len(categoriesSet))
+            updateCategoriesDistDict(categoriesDistDict['tmp'],sessionType, isBuySession,categoriesSet)
+
+    #iterate registered users sessions
+    for user in regUsersSessions:
+        sessionType = ""
+        for session in user:
+            isBuySession = session['isBuySession']
+            categoriesSet = set(session['category2Vector'])
+            if session['isBasketSession']:
+                if session['isBuySession']:
+                    sessionType = 'buy'
+                else:
+                    sessionType = 'noBuy'
+            else:
+                sessionType = 'other'
+
+            updateNumOfBasketCategoriesBySessionType(numOfCategoriesDict['reg'], sessionType,isBuySession, len(categoriesSet))
+            updateCategoriesDistDict(categoriesDistDict['reg'], sessionType,isBuySession, categoriesSet)
+
+
+def updateCategoriesDistDict(dict, sessionType, isBuySession, categoryVector):
+    if sessionType == 'other':
+        if isBuySession:
+            buyString = 'buy'
+        else:
+            buyString = 'noBuy'
+
+        for category in categoryVector:
+            if category in dict[sessionType][buyString]:
+                dict[sessionType][buyString][category] += 1
+            else:
+                dict[sessionType][buyString][category] = 1
+
+
+
+    else:
+        for category in categoryVector:
+            if category in dict[sessionType]:
+                dict[sessionType][category] += 1
+            else:
+                dict[sessionType][category] = 1
+
+
+def updateNumOfBasketCategoriesBySessionType(dict, sessionType,isBuySession, numOfCategories):
+    if sessionType == 'other':
+        if isBuySession:
+            buyString = 'buy'
+        else:
+            buyString = 'noBuy'
+        dict[sessionType][buyString][str(numOfCategories)] += 1
+
+    dict[sessionType][str(numOfCategories)] += 1
+
+
+def updateSessionLengthBySessionType(dict, sessionType, sessionLength):
+    dict[sessionType][str(sessionLength)]+=1
+
+
+def updateSessionLengthForUserType(sessionLengthDict, sessionLength):
+ sessionLengthDict[str(sessionLength)]+=1
+
+
+#updates the evaluation with current batch data
+def updateWithBatchData(basketAndBuySessionsDist, regAndTmpCount, regUsersSessions, tmpUsersSessions):
+
+    #iterate temporary users sessions
+    for user in tmpUsersSessions:
+        regAndTmpCount['tmpUsers']+=1
+        userType='tmp'
+        for session in user:
+            day = str(session['weekday'])
+            hour = int(session['hour'])
+            #hourBin = str(int(getHourBin(hour)))
+            regAndTmpCount[userType+'Sessions'] += 1
+            regAndTmpCount[userType+'AvgSessionLength'] = calculateAvgIteratively \
+                (regAndTmpCount[userType+'Sessions'], regAndTmpCount[userType+'AvgSessionLength'], session['numOfEvents'])
+            if session['isBasketSession']:
+                if session['isBuySession']:
+                    sessionType='buy'
+                else:
+                    sessionType='noBuy'
+                updateBasketAndBuyDict(basketAndBuySessionsDist,regAndTmpCount,userType,sessionType,str(hour),day,session)
+
+    #iterate registered users sessions
+    for user in regUsersSessions:
+        regAndTmpCount['regUsers']+=1
+        userType = 'reg'
+        regAndTmpCount['regAvgNumOfSessions'] = calculateAvgIteratively \
+            (regAndTmpCount['regUsers'], regAndTmpCount['regAvgNumOfSessions'], len(user))
+
+        for session in user:
+            day = str(session['weekday'])
+            hour = int(session['hour'])
+            #hourBin = str(getHourBin(hour))
+            regAndTmpCount[userType+'Sessions'] += 1
+            regAndTmpCount[userType+'AvgSessionLength'] = calculateAvgIteratively \
+                (regAndTmpCount[userType+'Sessions'], regAndTmpCount[userType+'AvgSessionLength'], session['numOfEvents'])
+            if session['isBasketSession']:
+                if session['isBuySession']:
+                    sessionType='buy'
+                else:
+                    sessionType='noBuy'
+                updateBasketAndBuyDict(basketAndBuySessionsDist,regAndTmpCount,userType,sessionType,str(hour),day,session)
+
+
+#
+def updateBasketAndBuyDict(basketAndBuySessionsDist,regAndTmpCount,userType,sessionType,hourBin,day,session):
+
+    basketAndBuySessionsDist[userType]['basket']['weekday'][day] += 1
+    basketAndBuySessionsDist[userType]['basket']['hour'][hourBin] += 1
+    basketAndBuySessionsDist[userType]['basket_'+sessionType]['count'] += 1
+    basketAndBuySessionsDist[userType]['basket_'+sessionType]['weekday'][day] += 1
+    basketAndBuySessionsDist[userType]['basket_'+sessionType]['hour'][hourBin] += 1
+    basketAndBuySessionsDist[userType]['basket_'+sessionType]['avgDwell'] = calculateAvgIteratively \
+        (basketAndBuySessionsDist[userType]['basket_'+sessionType]['count'],
+         basketAndBuySessionsDist[userType]['basket_'+sessionType]['avgDwell'], session['totalDwell']/session['numOfEvents'])
+    basketAndBuySessionsDist[userType]['basket_'+sessionType]['totalDwell'] = calculateAvgIteratively\
+        (basketAndBuySessionsDist[userType]['basket_'+sessionType]['count'],
+         basketAndBuySessionsDist[userType]['basket_'+sessionType]['totalDwell'], session['totalDwell'])
+
+
+def getHourBin(hour):
+    step=1
+    for i in range(24):
+        if step*i<hour<step*(i+1):
+            return i
+    return 24/step-1
+
+
+def getLengthDist(usersSessions):
+    dictLength = {}
+    for i in range(300):
+        dictLength[str(i)] = 0
+    for list in usersSessions:
+        for session in list:
+            dictLength[str(len(session))]+=1
+    return dictLength
+
+
+def getRegisteredSessionLengthDist(usersSessions):
+    dictLength = {}
+    for i in range(300):
+        dictLength[str(i)] = 0
+
+# Same key values are added from both dictionaries
+def aggregateDicts(dict1, dict2):
+    for i in range(300):
+        dict1[str(i)] += dict2[str(i)]
+
+
+def updateDictSessionLength(dict,regDict,tmpDict):
+    dict['registered'] = aggregateDicts(dict['registered'], regDict)
+    dict['temporary'] = aggregateDicts(dict['temporary'], tmpDict)
+
+
+def getBasketSessions(userSessions):
+    basketSessions=[]
+    for list in userSessions:
+        basketSessions.append([])
+        for session in list:
+            if session['isBasketSession']:
+                basketSessions[-1].append(session)
+
+    return basketSessions
+
+
+def initResDict(resDict):
+    userTypes = {'reg', 'tmp'}
+    sessionTypes = {'buy', 'noBuy'}
+    resDict['basket'] = {}
+
+    for user in userTypes:
+        resDict[user] = {}
+        resDict['basket'][user]={}
+        initCountDict(resDict[user])
+        for session in sessionTypes:
+            resDict['basket'][user][session]={}
+            initCountDict(resDict['basket'][user][session])
+
+
+def initNumOfCategoriesDict(resDict):
+    userTypes = {'reg', 'tmp'}
+    sessionTypes = {'buy', 'noBuy','other'}
+
+    for user in userTypes:
+        resDict[user]={}
+        for session in sessionTypes:
+            resDict[user][session]={}
+            initCountDict(resDict[user][session])
+        resDict[user]['other']['buy'] = {}
+        resDict[user]['other']['noBuy'] = {}
+        initCountDict(resDict[user]['other']['buy'])
+        initCountDict(resDict[user]['other']['noBuy'])
+
+
+def initCategoriesDistDict(resDict):
+    userTypes = {'reg', 'tmp'}
+    sessionTypes = {'buy', 'noBuy','other'}
+
+    for user in userTypes:
+        resDict[user]={}
+        for session in sessionTypes:
+            resDict[user][session]={}
+
+        resDict[user]['other']['buy']={}
+        resDict[user]['other']['noBuy'] = {}
+
+
+def initCountDict(dict):
+    for i in range(100):
+        dict[str(i)]=0

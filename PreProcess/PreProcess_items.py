@@ -7,21 +7,22 @@ import csv
 
 class itemsPreProcess:
 
-    PATH_ITEMS = "C:\\Users\\royku\\Desktop\\Research\\files"
+    PATH_ITEMS = "C:\\files"
 
     def __init__(self,date):
+        self.path = "C:\\files"
         self.itemsDict = {}
         self.dict_category1 = {}
         self.dict_category2 = {}
         self.readItemsDictFromCsv(date)
         self.readCategory1DictFromFile()
         self.readCategory2DictFromFile()
-        self.path = "C:\\Users\\royku\\Desktop\\Research\\files"
+
 
     def readItemsDictFromCsv(self, date):
 
-        itemsDict = None
-        while(dict == None and date < dt.date(2017,4,21)):
+        tmp_dict = {}
+        while(len(tmp_dict)==0 and date.date() < dt.date(2017,date.month,30)):
             date=date+dt.timedelta(days=1)
             year = date.year
             month = date.month
@@ -39,14 +40,14 @@ class itemsPreProcess:
 
             dateString = str(year) + "-" + monthString + "-" + dayString
             if os.path.isfile(self.path + "//" + dateString + ".csv"):
+                tmp_dict={}
                 df = pd.read_csv(self.path + "//" + dateString + ".csv")
                 for idx, row in df.iterrows():
-                    print(row)
-                    itemsDict[str(row["itemId"])] = df.iloc[idx, 2:]
-        if(itemsDict != None):
-            self.itemsDict = itemsDict
+                    tmp_dict[str(row["product_id"])] = df.iloc[idx, 2:]
+        if(len(tmp_dict) != 0):
+            self.itemsDict = tmp_dict
 
-    def getItemsDict(self, date):
+    def getItemsDict(self):
             return self.itemsDict
 
 

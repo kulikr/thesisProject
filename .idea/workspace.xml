@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/utils.py" line="99" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f03f26-e858-47e4-b154-3f6d6b8da6db" name="Default" comment="Commit Project">
-      <change beforePath="$PROJECT_DIR$" afterPath="$PROJECT_DIR$" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change afterPath="$PROJECT_DIR$/Model/Model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/OptimizeXgbParameters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sessionBasedIntervention.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sessionBasedIntervention.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_Extract.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py" beforeDir="false" afterPath="$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PreProcess/PreProcess_ExtractSessions.py" beforeDir="false" afterPath="$PROJECT_DIR$/PreProcess/PreProcess_ExtractSessions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PreProcess/PreProcess_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/PreProcess/PreProcess_items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp_extractSessions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,10 +27,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/thesisProject$test.coverage" NAME="test Coverage Results" MODIFIED="1523645459062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/thesisProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1523803892807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sessionBasedIntervention$Main.coverage" NAME="Main Coverage Results" MODIFIED="1520264704615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BasketSessions$Main.coverage" NAME="Main Coverage Results" MODIFIED="1532000652070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BasketSessions$Main_evaluate.coverage" NAME="Main_evaluate Coverage Results" MODIFIED="1532021956450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sessionBasedIntervention$Unnamed.coverage" NAME="Main Coverage Results" MODIFIED="1515603929260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/thesisProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1523803892807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/thesisProject$test.coverage" NAME="test Coverage Results" MODIFIED="1523645459062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BasketSessions$test.coverage" NAME="test Coverage Results" MODIFIED="1528720121705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BasketSessions$utils.coverage" NAME="utils Coverage Results" MODIFIED="1525284480005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -32,28 +50,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="PreProcess_ExtractSessions.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main_Extract.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main_Extract.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#136#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PreProcess_ExtractSessions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PreProcess/PreProcess_ExtractSessions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="124" column="105" lean-forward="false" selection-start-line="124" selection-start-column="105" selection-end-line="124" selection-end-column="105" />
+            <state relative-caret-position="332">
+              <caret line="203" column="46" selection-start-line="203" selection-start-column="35" selection-end-line="203" selection-end-column="46" />
               <folding>
-                <element signature="e#165#208#0" expanded="false" />
-                <element signature="e#398#4558#0" expanded="false" />
-                <element signature="e#1782#2262#0" expanded="false" />
-                <element signature="e#4747#6765#0" expanded="false" />
-                <element signature="e#6930#7563#0" expanded="false" />
-                <element signature="e#7678#8469#0" expanded="false" />
-                <element signature="e#8623#8732#0" expanded="false" />
-                <element signature="e#8886#9293#0" expanded="false" />
-                <element signature="e#9455#9893#0" expanded="false" />
-                <element signature="e#10053#10356#0" expanded="false" />
-                <element signature="e#10531#10731#0" expanded="false" />
-                <element signature="e#10874#11176#0" expanded="false" />
-                <element signature="e#11308#11570#0" expanded="false" />
-                <element signature="e#11675#12074#0" expanded="false" />
-                <element signature="e#12242#12422#0" expanded="false" />
-                <element signature="e#12507#12563#0" expanded="false" />
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PreProcess_items.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PreProcess/PreProcess_items.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PreProcess_ExtractEvents.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main_Evaluate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main_Evaluate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#0#136#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,18 +107,56 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+            <state relative-caret-position="343">
+              <caret line="272" column="38" selection-start-line="272" selection-start-column="38" selection-end-line="272" selection-end-column="38" />
               <folding>
-                <element signature="e#120#183#0" expanded="false" />
-                <element signature="e#227#363#0" expanded="false" />
-                <element signature="e#431#519#0" expanded="false" />
-                <element signature="e#565#761#0" expanded="false" />
-                <element signature="e#1688#2203#0" expanded="false" />
-                <element signature="e#2902#3164#0" expanded="false" />
-                <element signature="e#3201#3358#0" expanded="false" />
-                <element signature="e#3393#3453#0" expanded="false" />
-                <element signature="e#3483#3784#0" expanded="false" />
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#5000#5332#0" />
+                <element signature="e#5390#5569#0" />
+                <element signature="e#5623#6736#0" />
+                <element signature="e#8214#10505#0" />
+                <element signature="e#10549#10734#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Model/Model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-275">
+              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="regCsv_8" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/regCsv_8">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="Model_PreProcess.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PreProcess/Model_PreProcess.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1382">
+              <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+              <folding>
+                <element signature="e#1#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OptimizeXgbParameters.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Model/OptimizeXgbParameters.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="725">
+              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,36 +173,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>charts</find>
-      <find>discre</find>
-      <find>numof</find>
-      <find>date</find>
-      <find>update</find>
-      <find>accumulatedData['numOfBuys</find>
-      <find>.year</find>
-      <find>files</find>
-      <find>updateCurrentUSer</find>
-      <find>id</find>
-      <find>events[i][&quot;</find>
-      <find>itemId</find>
-      <find>productId</find>
-      <find>product</find>
-      <find>eve</find>
-      <find>isitem</find>
-      <find>timestamp</find>
-      <find>10644096</find>
-      <find>3982972</find>
-      <find>std</find>
-      <find>Std</find>
-      <find>jsn</find>
-      <find>events_per_</find>
-      <find>with</find>
-      <find>path =</find>
-      <find>sessions_</find>
-      <find>plot.his</find>
-      <find>plot</find>
-      <find>users_eve</find>
-      <find>EventDist</find>
+      <find>math</find>
+      <find>get_max</find>
+      <find>extractsess</find>
+      <find>basket</find>
+      <find>readkeys</find>
+      <find>get_mode</find>
+      <find>with open</find>
+      <find>reg</find>
+      <find>del</find>
+      <find>to_csv</find>
+      <find>createses</find>
+      <find>updatesession</find>
+      <find>lastbasketevent</find>
+      <find>firstevent</find>
+      <find>lastevent</find>
+      <find>dwell</find>
+      <find>lasteve</find>
+      <find>dwellvector</find>
+      <find>first</find>
+      <find>numofsessio</find>
+      <find>numofusers</find>
+      <find>buildd</find>
+      <find>readeventsfromfile</find>
+      <find>extract</find>
+      <find>append</find>
+      <find>appenddictlist</find>
+      <find>builddf</find>
+      <find>basketEvent</find>
+      <find>appendDictList</find>
+      <find>100000</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,16 +224,28 @@
         <option value="$PROJECT_DIR$/PreProcess_ExtractEvents.py" />
         <option value="$PROJECT_DIR$/Evaluation And Data Analysis/evaluation.py" />
         <option value="$PROJECT_DIR$/PreProcess/PreProcess_itemsPromotion.py" />
-        <option value="$PROJECT_DIR$/PreProcess/PreProcess_items.py" />
         <option value="$PROJECT_DIR$/tmp_extractEvents.py" />
         <option value="$PROJECT_DIR$/Charts/users_event_dist" />
+        <option value="$PROJECT_DIR$/tmp_extractSessions.py" />
+        <option value="$PROJECT_DIR$/singletone.py" />
+        <option value="$PROJECT_DIR$/Singleton.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/pycharm64.exe.vmoptions" />
+        <option value="$PROJECT_DIR$/accumulated_06" />
+        <option value="$PROJECT_DIR$/basketAndBuyDist.json" />
+        <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/venv1/Main_Evaluate.py" />
+        <option value="$PROJECT_DIR$/PreProcess/PreProcess_items.py" />
+        <option value="$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/evaluation.py" />
-        <option value="$PROJECT_DIR$/Main.py" />
-        <option value="$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py" />
-        <option value="$PROJECT_DIR$/tmp_extractSessions.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/PreProcess/PreProcess_ExtractSessions.py" />
+        <option value="$PROJECT_DIR$/Main_Extract.py" />
+        <option value="$PROJECT_DIR$/Main_Evaluate.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/Model.py" />
+        <option value="$PROJECT_DIR$/Model/OptimizeXgbParameters.py" />
+        <option value="$PROJECT_DIR$/PreProcess/Model_PreProcess.py" />
+        <option value="$PROJECT_DIR$/Model/Model.py" />
       </list>
     </option>
   </component>
@@ -160,71 +255,59 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1030" />
+    <option name="x" value="1081" />
+    <option name="y" value="71" />
+    <option name="width" value="960" />
+    <option name="height" value="255" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="thesisProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesisProject" type="462c0819:PsiDirectoryNode" />
+              <item name="BasketSessions" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasketSessions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="thesisProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesisProject" type="462c0819:PsiDirectoryNode" />
-              <item name="Charts" type="462c0819:PsiDirectoryNode" />
+              <item name="BasketSessions" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasketSessions" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="thesisProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesisProject" type="462c0819:PsiDirectoryNode" />
+              <item name="BasketSessions" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasketSessions" type="462c0819:PsiDirectoryNode" />
               <item name="PreProcess" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thesisProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thesisProject" type="462c0819:PsiDirectoryNode" />
-              <item name="TmpFiles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test.py" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/royku/PycharmProjects/thesisProject/PreProcess/PreProcess_ExtractSessions.py" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/royku/PycharmProjects/thesisProject/PreProcess/PreProcess_ExtractSessions.py" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kulikr\Desktop\BasketSessions\Model" />
+      <recent name="C:\Users\kulikr\Desktop\BasketSessions\TmpFiles" />
+      <recent name="C:\Users\kulikr\Desktop\BasketSessions\evaluation_06" />
+      <recent name="C:\Users\kulikr\Desktop\BasketSessions" />
       <recent name="C:\Users\royku\PycharmProjects\thesisProject" />
-      <recent name="C:\Users\royku\PycharmProjects\thesisProject\charts" />
-      <recent name="C:\Users\royku\PycharmProjects\thesisProject\Data Csv" />
-      <recent name="C:\Users\royku\PycharmProjects\thesisProject\Evaluation And Data Analysis" />
-      <recent name="C:\Users\royku\PycharmProjects\thesisProject\PreProcess" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -239,52 +322,94 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.Main_evaluate">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
+      <module name="sessionBasedIntervention" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\royku\PycharmProjects\sessionBasedIntervention\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\kulikr\Desktop\BasketSessions\Main_Extract.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Main_evaluate" type="PythonConfigurationType" factoryName="Python">
+      <module name="sessionBasedIntervention" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\BasketSessions\venv1\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="sessionBasedIntervention" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main_Evaluate.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python">
+      <module name="sessionBasedIntervention" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\royku\PycharmProjects\sessionBasedIntervention\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="sessionBasedIntervention" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Python.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test" />
+    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sessionBasedIntervention" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Main" />
+      <item itemvalue="Python.Main_evaluate" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.utils" />
     </list>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.utils" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -339,60 +464,78 @@
       <option name="project" value="LOCAL" />
       <updated>1525081524202</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Commit Project">
+      <created>1525618057012</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1525618057012</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33372092" sideWeight="0.38072917" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="435" height="842" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.61927086" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23799582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13761468" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.65416664" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="SVN Repositories" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.565625" weight="0.31651375" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50208336" side_tool="true" weight="0.33600917" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32912844" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32912844" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.61927086" weight="0.3046709" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32908705" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19895834" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3296875" />
+      <window_info anchor="right" id="SciView" order="4" visible="true" weight="0.2578125" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.65416664" weight="0.3460722" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32912844" />
+      <window_info active="true" anchor="bottom" id="SVN Repositories" order="10" visible="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="435" height="842" id="Documentation" order="3" visible="true" weight="0.025" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49791667" weight="0.27494693" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info id="SVN Repositories" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47821102" sideWeight="0.34583333" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3015625" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="435" height="842" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33830276" sideWeight="0.56822914" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19583334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32798165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32912844" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47821102" sideWeight="0.65416664" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19583334" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32912844" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.56822914" weight="0.33830276" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.65416664" weight="0.47821102" />
+      <window_info anchor="right" x="0" y="0" width="435" height="842" id="Documentation" order="3" weight="0.3015625" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3296875" />
+      <window_info active="true" anchor="bottom" id="SVN Repositories" order="10" visible="true" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.34583333" side_tool="true" weight="0.47821102" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" visible="true" weight="0.32912844" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="5" weight="0.3296875" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32798165" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32912844" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,24 +584,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>58</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/evaluation.py</url>
           <line>20</line>
           <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PreProcess/PreProcess_ExtractSessions.py</url>
-          <line>154</line>
-          <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/evaluation.py</url>
@@ -467,18 +595,48 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>125</line>
+          <line>162</line>
           <option name="timeStamp" value="193" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="203" />
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tmp_extractSessions.py</url>
-          <line>141</line>
-          <option name="timeStamp" value="204" />
+          <url>file://$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="272" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main_Extract.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="281" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils.py</url>
+          <line>219</line>
+          <option name="timeStamp" value="354" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utils.py</url>
+          <line>216</line>
+          <option name="timeStamp" value="357" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -488,21 +646,59 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="205" />
+      <option name="time" value="358" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="dict2['a492c670-1166-946c-5331-4de3a06dd243']" language="Python" />
-        <watch expression="len(sessions)" language="Python" />
-        <watch expression="usersEventsPerSession['3287990']" language="Python" />
-        <watch expression="usersSessions['ca0bb06f-cb14-9f3a-0281-b427e66e38b7']" language="Python" />
-        <watch expression="eventData[i]" language="Python" />
-        <watch expression="__py_debug_temp_var_2081563266" />
+        <watch expression="dict[&quot;basketEvents&quot;]" language="Python" />
+        <watch expression="dict[&quot;&quot;]" language="Python" />
+        <watch expression="len(dict_list)" language="Python" />
+        <watch expression="len(userSessions)" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>len(userSessions)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(dict_list)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dict[&quot;&quot;]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dict[&quot;basketEvents&quot;]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dict[&quot;priceVector&quot;]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>openSessions[currentUser]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>session</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>itemsDict[itemId]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>eventData[i]</expression-string>
         <language-id>Python</language-id>
@@ -513,134 +709,9 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>usersSessions['ca0bb06f-cb14-9f3a-0281-b427e66e38b7']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>sessions['ca0bb06f-cb14-9f3a-0281-b427e66e38b7']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>usersEventsPerSession['3287990']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>dict2['a492c670-1166-946c-5331-4de3a06dd243']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>openSessions[event['newUserId']]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>openSessions[event['userId']]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>events</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>filename</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/charts/value distributiontotalAmountOfPayment.png" />
-    <entry file="file://$PROJECT_DIR$/charts/value distributiontotalDwell.png" />
-    <entry file="file://$PROJECT_DIR$/charts/scatter_maximalItemPrice.png" />
-    <entry file="file://$PROJECT_DIR$/charts/scatter_isBuySession.png" />
-    <entry file="file://$PROJECT_DIR$/charts/scatter_lastEvent.png" />
-    <entry file="file://$PROJECT_DIR$/charts/plotBar_boughtItems.png" />
-    <entry file="file://$PROJECT_DIR$/charts/plotBar_maxDwell.png" />
-    <entry file="file://$PROJECT_DIR$/charts/value distributionmaxDwell.png" />
-    <entry file="file://$PROJECT_DIR$/charts/value distributionnumOfSaleItemsBought.png" />
-    <entry file="file://$PROJECT_DIR$/charts/session length distribution.png" />
-    <entry file="file://$PROJECT_DIR$/Data Csv/sessions_04.csv">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="-902762">
-          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/charts/value distributionnumOfPurchasedItems.png" />
-    <entry file="file://$PROJECT_DIR$/charts/value distributionmaximalItemPrice.png" />
-    <entry file="file://$PROJECT_DIR$/sessions_04.csv" />
-    <entry file="file://$PROJECT_DIR$/accumulated_04" />
-    <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-824507981/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="1126" column="8" lean-forward="false" selection-start-line="1126" selection-start-column="8" selection-end-line="1126" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp_extractEvents.py" />
-    <entry file="file://$PROJECT_DIR$/sessions_events_dist4.csv" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/pycharm64.exe.vmoptions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PreProcess/PreProcess_items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/events_per_user_5.csv" />
-    <entry file="file://$PROJECT_DIR$/../sessionBasedIntervention/venv/Lib/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="3743" column="0" lean-forward="false" selection-start-line="3743" selection-start-column="0" selection-end-line="3743" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sessionBasedIntervention/venv/Lib/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="499" column="0" lean-forward="false" selection-start-line="499" selection-start-column="0" selection-end-line="499" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sessionBasedIntervention/venv/Lib/site-packages/matplotlib/legend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="582" column="0" lean-forward="false" selection-start-line="582" selection-start-column="0" selection-end-line="582" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="1676" column="0" lean-forward="false" selection-start-line="1676" selection-start-column="0" selection-end-line="1676" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="295" column="0" lean-forward="false" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sessions_events_dist_4.csv" />
     <entry file="file://$PROJECT_DIR$/charts/testEventDist.png" />
     <entry file="file://$PROJECT_DIR$/events_per_user.csv" />
@@ -650,144 +721,257 @@
     <entry file="file://$PROJECT_DIR$/event_means_5" />
     <entry file="file://$PROJECT_DIR$/users_event_dist.csv" />
     <entry file="file://$PROJECT_DIR$/Charts/EventDist_5.png" />
-    <entry file="file://$PROJECT_DIR$/../sessionBasedIntervention/venv/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../sessionBasedIntervention/venv/Lib/codecs.py" />
     <entry file="file://$PROJECT_DIR$/TmpFiles/event_means_5" />
     <entry file="file://$PROJECT_DIR$/TmpFiles/sessions_events_dist_5" />
-    <entry file="file://$PROJECT_DIR$/../sessionBasedIntervention/venv/Lib/site-packages/pandas/io/parsers.py">
+    <entry file="file://$PROJECT_DIR$/../sessionBasedIntervention/venv/Lib/site-packages/pandas/io/parsers.py" />
+    <entry file="file://$PROJECT_DIR$/Charts/EventDist_4.png" />
+    <entry file="file://$PROJECT_DIR$/Charts/users_event_dist" />
+    <entry file="file://$PROJECT_DIR$/Charts/Number_Of_Basket_Sessions_4" />
+    <entry file="file://$PROJECT_DIR$/Charts/Number_Of_Basket_Sessions_5" />
+    <entry file="file://$PROJECT_DIR$/TmpFiles/event_means_4" />
+    <entry file="file://$PROJECT_DIR$/Singleton.py" />
+    <entry file="file://$PROJECT_DIR$/click_stream_05.csv" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/pycharm64.exe.vmoptions" />
+    <entry file="file://$PROJECT_DIR$/events_05.csv" />
+    <entry file="file://$PROJECT_DIR$/tmp_extractSessions.py" />
+    <entry file="file://$PROJECT_DIR$/evaluation_6/accumulated_06">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="1694" column="0" lean-forward="false" selection-start-line="1694" selection-start-column="0" selection-end-line="1694" selection-end-column="0" />
+        <state relative-caret-position="550">
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Charts/EventDist_4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/count.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Charts/users_event_dist">
+    <entry file="file://$PROJECT_DIR$/evaluation_6/basketAndBuyDist.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="625">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="310" selection-start-line="310" selection-end-line="310" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/json/decoder.py" />
+    <entry file="file://$PROJECT_DIR$/evaluation_6/sessionLengthDist.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluation_6/categoriesDistInSessions.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="56" lean-forward="true" selection-start-column="56" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluation_6/numOfCategoriesInSessions.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7825">
+          <caret line="313" column="6" selection-start-line="313" selection-start-column="6" selection-end-line="313" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="31" />
+        <state relative-caret-position="1400">
+          <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Charts/Number_Of_Basket_Sessions_4" />
-    <entry file="file://$PROJECT_DIR$/Charts/Number_Of_Basket_Sessions_5">
+    <entry file="file://$PROJECT_DIR$/TmpFiles/numOfCategoriesInSessions_7.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="453">
+          <caret line="467" column="6" lean-forward="true" selection-start-line="467" selection-start-column="6" selection-end-line="467" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session_Data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regCsv_6" />
+    <entry file="file://$USER_HOME$/Anaconda/Lib/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="1120" selection-start-line="1120" selection-end-line="1120" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="194" column="64" lean-forward="false" selection-start-line="194" selection-start-column="64" selection-end-line="195" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        <state relative-caret-position="575">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
           <folding>
-            <element signature="e#0#15#0" expanded="false" />
+            <element signature="e#140#336#0" />
+            <element signature="e#391#1589#0" />
+            <element signature="e#1660#1863#0" />
+            <element signature="e#1895#2269#0" />
+            <element signature="e#2304#2567#0" />
+            <element signature="e#2594#2765#0" />
+            <element signature="e#2818#2872#0" />
+            <element signature="e#2920#3125#0" />
+            <element signature="e#3163#4290#0" />
+            <element signature="e#4338#7284#0" />
+            <element signature="e#7324#8463#0" />
+            <element signature="e#8548#8604#0" />
+            <element signature="e#8673#8838#0" />
+            <element signature="e#9577#11687#0" />
+            <element signature="e#11723#11823#0" />
+            <element signature="e#12280#13586#0" />
+            <element signature="e#13726#14732#0" />
+            <element signature="e#14895#16320#0" />
+            <element signature="e#16406#16982#0" />
+            <element signature="e#17084#17325#0" />
+            <element signature="e#17518#17558#0" />
+            <element signature="e#17717#19605#0" />
+            <element signature="e#19725#20694#0" />
+            <element signature="e#20724#20831#0" />
+            <element signature="e#21511#21709#0" />
+            <element signature="e#21767#21838#0" />
+            <element signature="e#21879#21938#0" />
+            <element signature="e#22171#22402#0" />
+            <element signature="e#22436#22797#0" />
+            <element signature="e#22842#23286#0" />
+            <element signature="e#23333#23618#0" />
+            <element signature="e#23650#23693#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="975">
+          <caret line="1641" column="26" selection-start-line="1641" selection-start-column="26" selection-end-line="1641" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda/Lib/site-packages/numpy/core/_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="310" selection-start-line="310" selection-end-line="310" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmpCsv_8">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15434" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main_Extract.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
           <folding>
-            <element signature="e#0#136#0" expanded="false" />
-            <element signature="e#366#515#0" expanded="false" />
-            <element signature="e#568#699#0" expanded="false" />
-            <element signature="e#755#927#0" expanded="false" />
-            <element signature="e#989#1167#0" expanded="false" />
-            <element signature="e#1227#1499#0" expanded="false" />
+            <element signature="e#0#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main_Evaluate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#136#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="343">
+          <caret line="272" column="38" selection-start-line="272" selection-start-column="38" selection-end-line="272" selection-end-column="38" />
           <folding>
-            <element signature="e#120#183#0" expanded="false" />
-            <element signature="e#227#363#0" expanded="false" />
-            <element signature="e#431#519#0" expanded="false" />
-            <element signature="e#565#761#0" expanded="false" />
-            <element signature="e#1688#2203#0" expanded="false" />
-            <element signature="e#2902#3164#0" expanded="false" />
-            <element signature="e#3201#3358#0" expanded="false" />
-            <element signature="e#3393#3453#0" expanded="false" />
-            <element signature="e#3483#3784#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#5000#5332#0" />
+            <element signature="e#5390#5569#0" />
+            <element signature="e#5623#6736#0" />
+            <element signature="e#8214#10505#0" />
+            <element signature="e#10549#10734#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmp_extractSessions.py">
+    <entry file="file://$PROJECT_DIR$/Model/OptimizeXgbParameters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="152" column="16" lean-forward="false" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
+        <state relative-caret-position="725">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#468#3676#0" expanded="false" />
-            <element signature="e#3815#5196#0" expanded="false" />
-            <element signature="e#5323#5876#0" expanded="false" />
-            <element signature="e#6045#6225#0" expanded="false" />
-            <element signature="e#6309#6365#0" expanded="false" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TmpFiles/event_means_4">
+    <entry file="file://$PROJECT_DIR$/PreProcess/PreProcess_items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PreProcess/PreProcess_ExtractSessions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="124" column="105" lean-forward="false" selection-start-line="124" selection-start-column="105" selection-end-line="124" selection-end-column="105" />
+        <state relative-caret-position="332">
+          <caret line="203" column="46" selection-start-line="203" selection-start-column="35" selection-end-line="203" selection-end-column="46" />
           <folding>
-            <element signature="e#165#208#0" expanded="false" />
-            <element signature="e#398#4558#0" expanded="false" />
-            <element signature="e#1782#2262#0" expanded="false" />
-            <element signature="e#4747#6765#0" expanded="false" />
-            <element signature="e#6930#7563#0" expanded="false" />
-            <element signature="e#7678#8469#0" expanded="false" />
-            <element signature="e#8623#8732#0" expanded="false" />
-            <element signature="e#8886#9293#0" expanded="false" />
-            <element signature="e#9455#9893#0" expanded="false" />
-            <element signature="e#10053#10356#0" expanded="false" />
-            <element signature="e#10531#10731#0" expanded="false" />
-            <element signature="e#10874#11176#0" expanded="false" />
-            <element signature="e#11308#11570#0" expanded="false" />
-            <element signature="e#11675#12074#0" expanded="false" />
-            <element signature="e#12242#12422#0" expanded="false" />
-            <element signature="e#12507#12563#0" expanded="false" />
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PreProcess/Model_PreProcess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1382">
+          <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+          <folding>
+            <element signature="e#1#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regCsv_8">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-275">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
