@@ -200,12 +200,23 @@ data_reg["isLoggedUser"] = 1
 
 data_all = data_tmp.append(data_reg)
 
-run_model(data_reg,run_type ="registered",use_basket_features=False)
-run_model(data_tmp, run_type = "tmp",use_basket_features=False)
-run_model(data_all, run_type = "all",use_basket_features=False)
+features_list = list(data_all.columns)
+features_list = sorted(features_list)
 
-run_model(data_reg,run_type ="registered",use_basket_features=True)
-run_model(data_tmp, run_type = "tmp",use_basket_features=True)
-run_model(data_all, run_type = "all",use_basket_features=True)
+with open("./full_features_list.txt", mode="w+") as f:
+    for feature in features_list:
+        f.write(feature+"\n")
+
+with open("./partial_features_list.txt", mode="w+") as f:
+    for feature in [feature for feature in features_list if not feature.startswith("b_")]:
+        f.write(feature+"\n")
+
+# run_model(data_reg,run_type ="registered",use_basket_features=False)
+# run_model(data_tmp, run_type = "tmp",use_basket_features=False)
+# run_model(data_all, run_type = "all",use_basket_features=False)
+#
+# run_model(data_reg,run_type ="registered",use_basket_features=True)
+# run_model(data_tmp, run_type = "tmp",use_basket_features=True)
+# run_model(data_all, run_type = "all",use_basket_features=True)
 
 

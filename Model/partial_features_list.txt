@@ -1,0 +1,17 @@
+avgDwell
+cat_entropy
+dominant_category
+dwellStd
+hour
+isBuySession
+isLoggedUser
+maxDwell
+maximalItemPrice
+minDwell
+minimalItemPrice
+numOfCategories
+numOfEvents
+price_mean
+price_std
+totalDwell
+weekday

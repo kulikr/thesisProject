@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f03f26-e858-47e4-b154-3f6d6b8da6db" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Main_Evaluate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/RunModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PreProcess/Model_PreProcess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data Csv/accumulated_04" beforeDir="false" afterPath="$PROJECT_DIR$/ReadyCharts/accumulated_04" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main_Extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main_Extract.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/OptimizeXgbParameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/OptimizeXgbParameters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py" beforeDir="false" afterPath="$PROJECT_DIR$/PreProcess/PreProcess_ExtractEvents.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PreProcess/PreProcess_ExtractSessions.py" beforeDir="false" afterPath="$PROJECT_DIR$/PreProcess/PreProcess_ExtractSessions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/RunModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/RunModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/results/1_registered_noBasket/_importance.png" beforeDir="false" afterPath="$PROJECT_DIR$/Model/results/1_registered_noBasket/_importance.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/results/2_tmp_noBasket/_importance.png" beforeDir="false" afterPath="$PROJECT_DIR$/Model/results/2_tmp_noBasket/_importance.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/results/3_all_noBasket/_importance.png" beforeDir="false" afterPath="$PROJECT_DIR$/Model/results/3_all_noBasket/_importance.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/results/4_registered_basket/_importance.png" beforeDir="false" afterPath="$PROJECT_DIR$/Model/results/4_registered_basket/_importance.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/results/5_tmp_basket/_importance.png" beforeDir="false" afterPath="$PROJECT_DIR$/Model/results/5_tmp_basket/_importance.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/results/6_all_basket/_importance.png" beforeDir="false" afterPath="$PROJECT_DIR$/Model/results/6_all_basket/_importance.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,7 +22,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/sessionBasedIntervention$Main.coverage" NAME="Main Coverage Results" MODIFIED="1520264704615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BasketSessions$RunModel.coverage" NAME="RunModel Coverage Results" MODIFIED="1533749834785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
+    <SUITE FILE_PATH="coverage/BasketSessions$RunModel.coverage" NAME="RunModel Coverage Results" MODIFIED="1533803475449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
     <SUITE FILE_PATH="coverage/BasketSessions$Main.coverage" NAME="Main Coverage Results" MODIFIED="1532000652070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BasketSessions$Main_evaluate.coverage" NAME="Main_evaluate Coverage Results" MODIFIED="1533642891501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sessionBasedIntervention$Unnamed.coverage" NAME="Main Coverage Results" MODIFIED="1515603929260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -54,8 +48,8 @@
       <file leaf-file-name="RunModel.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/RunModel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="202" column="18" selection-start-line="202" selection-start-column="18" selection-end-line="202" selection-end-column="18" />
+            <state relative-caret-position="248">
+              <caret line="209" selection-start-line="209" selection-end-line="209" />
               <folding>
                 <element signature="e#349#544#0" />
                 <element signature="e#666#953#0" />
@@ -78,7 +72,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_times.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="partial_features_list.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Model/partial_features_list.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="full_features_list.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Model/full_features_list.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Anaconda/Lib/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="308" selection-start-line="308" selection-end-line="308" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_times.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/results/3_all_noBasket/run_times.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -172,13 +193,13 @@
         <option value="$PROJECT_DIR$/Main_Extract.py" />
         <option value="$PROJECT_DIR$/Model/OptimizeXgbParameters.py" />
         <option value="$PROJECT_DIR$/run_num.txt" />
-        <option value="$PROJECT_DIR$/Model/RunModel.py" />
         <option value="$PROJECT_DIR$/Model/results/6_all_basket/results.txt" />
         <option value="$PROJECT_DIR$/Model/results/5_tmp_basket/results.txt" />
         <option value="$PROJECT_DIR$/Model/results/4_registered_basket/results.txt" />
         <option value="$PROJECT_DIR$/Model/results/3_all_noBasket/results.txt" />
         <option value="$PROJECT_DIR$/Model/results/2_tmp_noBasket/results.txt" />
         <option value="$PROJECT_DIR$/Model/results/1_registered_noBasket/results.txt" />
+        <option value="$PROJECT_DIR$/Model/RunModel.py" />
       </list>
     </option>
   </component>
@@ -211,22 +232,6 @@
               <item name="BasketSessions" type="b2602c69:ProjectViewProjectNode" />
               <item name="BasketSessions" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BasketSessions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BasketSessions" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BasketSessions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BasketSessions" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BasketSessions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BasketSessions" type="462c0819:PsiDirectoryNode" />
-              <item name="PreProcess" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -237,7 +242,7 @@
     <property name="ChangesTree.GroupingKeys" value="directory&#10;module" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/royku/PycharmProjects/thesisProject/PreProcess/PreProcess_ExtractSessions.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Model/RunModel.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Model/results/6_all_basket/_importance.png" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -437,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532955443917</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Baseline model ready">
+      <created>1533801018318</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1533801018318</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -458,17 +470,17 @@
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32912844" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32908705" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.61927086" visible="true" weight="0.27388534" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.61927086" weight="0.10721868" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32908705" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.111979164" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3296875" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49791667" weight="0.27494693" />
-      <window_info anchor="right" id="SciView" order="4" visible="true" weight="0.378125" />
+      <window_info anchor="right" id="SciView" order="4" visible="true" weight="0.048958335" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32908705" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.65416664" weight="0.36836517" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.65416664" visible="true" weight="0.36836517" />
       <window_info active="true" anchor="bottom" id="SVN Repositories" order="10" visible="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -540,7 +552,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First project commit" />
     <MESSAGE value="Commit Project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Project" />
+    <MESSAGE value="Baseline model ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="Baseline model ready" />
   </component>
   <component name="WindowStateProjectService">
     <state width="258" height="162" key="Git.Branch.Popup" />
@@ -602,8 +615,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Model/RunModel.py</url>
-          <line>211</line>
+          <line>222</line>
           <option name="timeStamp" value="444" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Model/RunModel.py</url>
+          <line>209</line>
+          <option name="timeStamp" value="484" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Model/RunModel.py</url>
+          <line>205</line>
+          <option name="timeStamp" value="486" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -613,7 +636,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="483" />
+      <option name="time" value="488" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -678,10 +701,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/click_stream_05.csv" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/pycharm64.exe.vmoptions" />
-    <entry file="file://$PROJECT_DIR$/events_05.csv" />
-    <entry file="file://$PROJECT_DIR$/tmp_extractSessions.py" />
     <entry file="file://$PROJECT_DIR$/evaluation_6/basketAndBuyDist.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
@@ -911,13 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="310" selection-start-line="310" selection-end-line="310" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/session_Data.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -1124,10 +1136,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Model/results/6_all_basket/_importance.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/results/1_registered_noBasket/_importance.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/results/3_all_noBasket/run_times.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Model/RunModel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="202" column="18" selection-start-line="202" selection-start-column="18" selection-end-line="202" selection-end-column="18" />
+        <state relative-caret-position="248">
+          <caret line="209" selection-start-line="209" selection-end-line="209" />
           <folding>
             <element signature="e#349#544#0" />
             <element signature="e#666#953#0" />
@@ -1149,10 +1181,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/results/3_all_noBasket/run_times.txt">
+    <entry file="file://$PROJECT_DIR$/Model/partial_features_list.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="350">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/full_features_list.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
         </state>
       </provider>
     </entry>
