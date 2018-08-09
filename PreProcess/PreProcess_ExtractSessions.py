@@ -14,9 +14,7 @@ def extractSessions(eventsPath, session_idle_threshold):
     openSessions = {}
     closedSessions = {}
     usersEventsPerSession = {}
-    itemsAggregated = {}
     meaningfulEvents = ["transfer","basket","click","clickrecommended","buy"]
-    lastItemId = ""
     accumulatedData={}
     initAccumulatedData(accumulatedData)
 
@@ -41,19 +39,13 @@ def extractSessions(eventsPath, session_idle_threshold):
                 print(str(i))
             event = eventList.pop(0)
 
-            # # Examine only important events
-            # if event["eventType"] not in meaningfulEvents:
-            #     continue
-
             currentUser = event['userId']
             eventDate = event['timestamp']
-
 
             # Ignore events of 'null' users
             if currentUser == 'null':
                 accumulatedData['nullUser'][event['eventType']] += 1
                 continue
-
             else:
                 accumulatedData['eventDist'][event['eventType']] += 1
 
@@ -100,7 +92,8 @@ def extractSessions(eventsPath, session_idle_threshold):
                 # If the user was idle for more than threshold, add the event to new session and add the session to the closed sessions
                 if idleTime > session_idle_threshold:
                     updateAccumulatedSessions(currentUser, openSessions[currentUser], accumulatedData)
-
+                    if openSessions[currentUser]["isBasketSession"]!= True and openSessions[currentUser]["isBasketSession"]!=False:
+                        ben = 4
                     # Remove user from open sessions and add to the closed sessions
                     saveToClosedSessionsDict(openSessions, closedSessions, currentUser)
 
@@ -175,11 +168,10 @@ def createNewSession(event, itemsDict, pre_items , currentUser, openSessions, is
     openSessions[currentUser]['totalDwell'] = 0
 
     # Purchase properties - updated on 'updatePurchaseProperties'
-    openSessions[currentUser]['maximalItemPrice'] = 0
     openSessions[currentUser]['numOfPurchasedItems'] = 0  # update the number when session is saved
     openSessions[currentUser]['numOfSaleItemsBought'] = 0  # not yet implemented
     openSessions[currentUser]['totalAmountOfPayment'] = 0  # amount paid by the user in the session
-
+    openSessions[currentUser]['maximalBoughtItemPrice'] = 0
 
     # Time Features - no update needed
     openSessions[currentUser]['month'] = event['timestamp'].month
@@ -258,8 +250,8 @@ def updatePurchaseProperties(event, openSessions, currentUser):
 
         openSessions[currentUser]['numOfPurchasedItems'] += 1
 
-        if price > openSessions[currentUser]['maximalItemPrice']:
-            openSessions[currentUser]['maximalItemPrice'] = float(splittedInfo[3])
+        if price > openSessions[currentUser]['maximalBoughtItemPrice']:
+            openSessions[currentUser]['maximalBoughtItemPrice'] = float(splittedInfo[3])
 
         # openSessions[currentUser]['numOfSaleItemsBought'] = 0  # not yet implemented (need to preProcess items catalogue)
         openSessions[currentUser]['totalAmountOfPayment'] += price * quantity

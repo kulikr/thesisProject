@@ -1,0 +1,10 @@
+*** Results ***
+Number of instances :5876
+Number of training instances :4995
+Number of test instances :881
+*** Evaluation ***
+Model Accuracy: 0.7653061224489796
+Model Precision: 0.7797513321492007
+Model Recall: 0.8409961685823755
+Model Auc :0.7482758620689655
+

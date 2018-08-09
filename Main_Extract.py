@@ -2,17 +2,13 @@ from PreProcess import PreProcess_ExtractEvents as pre_events, PreProcess_Extrac
 import matplotlib.pyplot as plt
 # import seaborn as sns
 import numpy as np
-import evaluation as evl
+import Evaluation as evl
 import os
 import utils as utl
 from sklearn import preprocessing as pre
 
 
-def ensure_dir(file_path):
-    directory_in_str =os.getcwd()+file_path
-    print(directory_in_str)
-    if not os.path.isdir(directory_in_str):
-        os.makedirs(directory_in_str)
+
 
 
 def plot_results(title, x_label, y_label, x, y):
@@ -42,8 +38,8 @@ directory_in_str="C:\\research_data\\current_run"
 
 directory = os.fsencode(directory_in_str)
 
-ensure_dir("./Charts")
-ensure_dir("./TmpFiles")
+utl.ensure_dir("./Charts")
+utl.ensure_dir("./TmpFiles")
 
 #Extract events and sessions
 # eventList = pre_events.extractEvents("C:\\data_sample2.txt")

@@ -40,6 +40,7 @@ def extractEvents(filePath):
             meaningfulEvents = ["transfer", "basket", "click", "clickrecommended", "buy"]
 
             if eventType not in meaningfulEvents:
+                print (eventType)
                 continue
 
             new_event = dict()
@@ -63,6 +64,7 @@ def extractEvents(filePath):
             if counter%10000 == 0:
                 print(str(counter))
             events.append(new_event)
+
         except:
             print("exception event num : "+str(i))
 

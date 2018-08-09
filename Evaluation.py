@@ -4,13 +4,12 @@ import numpy as np
 import utils as utl
 import pickle
 
-
+# Old code region
 def discretizeData(X):
     for column in X:
         if column not in ["lastEvent","boughtItems","isBuySession","events"]:
             X[column] = pd.cut(np.array(X[column]), 3, labels=["low", "medium", "high"])
     return X
-
 
 def drawPlotBars(X_true, X_false,  className):
 
@@ -237,6 +236,8 @@ def plotEventDistribution(path):
     plot.close()
 
 
+
+
 # returns whether the user is a temporary user
 def isTemporaryUser(username):
     if '-' in username:
@@ -250,7 +251,6 @@ def calculateAvgIteratively(new_N, current_avg, to_be_added):
     else:
         newAverage = to_be_added
     return newAverage
-
 
 
 def evaluateWithDb(server, month):

@@ -1,0 +1,11 @@
+Results for :all_users
+Number of instances :28093
+Model Accuracy: 0.8241575700047461
+Model Precision: 0.7820131030375224
+Model Recall: 0.7778436018957346
+Model Auc :0.8164752451283899
+Model Params: 
+{'base_score': 0.5, 'booster': 'dart', 'colsample_bylevel': 1, 'colsample_bytree': 0.8, 'gamma': 0.05, 'learning_rate': 0.1, 'max_delta_step': 0, 'max_depth': 7, 'min_child_weight': 5, 'missing': None, 'n_estimators': 245, 'n_jobs': 1, 'nthread': None, 'objective': 'reg:linear', 'random_state': 0, 'reg_alpha': 0, 'reg_lambda': 1, 'scale_pos_weight': 1, 'seed': None, 'silent': True, 'subsample': 0.5, 'kwargs': {'rate_drop': 0.1, 'skip_drop': 0.5}}
+threshold_deviation: 0.03
+threshold_importance: 0.01
+threshold_similarity: 0.75

@@ -1,0 +1,6 @@
+*** Run Time ***Number of instances :5876
+Feature Selection time is: 0.13616906666666667
+Optimizing n_estimators time is: 2.7003217000000004
+Grid Search time is: 12.4755546
+Training time is: 0.2260184
+Prediction time is: 0.0005200166666666666
