@@ -256,7 +256,7 @@ def calculateAvgIteratively(new_N, current_avg, to_be_added):
 def evaluateWithDb(server, month):
     fileName = "numOfCategoriesInBasketDist"
     basketAndBuySessionsDist,regAndTmpCount = initBB_dict()
-    cursor, sessionBatch = utl.readKeysBatchFromServer(0)
+    cursor, sessionBatch = utl.readKeysBatchFromServer(0, month)
     keys = encodeKeys(sessionBatch)
     regUsersSessions, tmpUsersSessions = utl.getValuesFromDb(keys,server)
     print(regUsersSessions[0])
@@ -284,7 +284,7 @@ def evaluateWithDb(server, month):
     batchCount = 0
     while cursor != 0:
         try:
-            cursor,sessionBatch=utl.readKeysBatchFromServer(cursor)
+            cursor,sessionBatch=utl.readKeysBatchFromServer(cursor, month)
             keys = encodeKeys(sessionBatch)
             if cursor == 0:
                 break
@@ -310,7 +310,6 @@ def encodeKeys(byteKeys):
     for key in byteKeys:
         strKeys.append(key.decode("UTF-8"))
     return strKeys
-
 
 
 def initBB_dict():

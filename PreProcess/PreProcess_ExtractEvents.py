@@ -115,7 +115,7 @@ def readEventsFromFile(path, numOfEventsToRead, position):
                 eventList.append(pickle.load(f))
             except EOFError:
                 print("file read to end")
-                return None,-1
+                return eventList,-1
 
             i+=1
         position = f.tell()

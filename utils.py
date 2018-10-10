@@ -13,11 +13,15 @@ import socket
 from itertools import zip_longest
 
 numOfUsers =0
+reg_users_sessions = 0
+tmp_users_sessions = 0
 
- # Converts date to a string format
+
+# Converts date to a string format
 def convertDateToString(o):
     if isinstance(o, datetime.datetime):
         return o.__str__()
+
 
 # Write dictionary to a file using json library
 def writeDictToFile(dict, fileName, seperators =['\n',':']):
@@ -32,7 +36,14 @@ def writeSessionsToDb(sessions,month):
     server_sessions= getServer(6379,month)
     server_users = getServer(6379,0)
     for user, userSessions in sessions.items():
-        saveUserSessionToDb(user,userSessions,server_sessions,server_users)
+        saveUserSessionsToDb(user, userSessions, server_sessions, server_users)
+
+# Writes sessions batch do the database
+def multiple_writeSessionsToDb(sessions,month,labels_dict):
+    server_sessions= getServer(6379,month)
+    server_users = getServer(6379,0)
+    for user, userSessions in sessions.items():
+        multiple_saveUserSessionsToDb(user, userSessions, labels_dict,server_sessions, server_users)
 
 # Write the openSessions dict to the database
 def writeOpenSessionsToDb(openSessions,month):
@@ -61,6 +72,7 @@ def writeSessionsEventDistToCsv(sessions):
     else:
         sessions.to_csv(filePath, header=False, index=False, mode='a')
 
+
 # Splits raw month data into two parts
 def splitMonthData(path):
         with open(path,'r') as f:
@@ -76,6 +88,7 @@ def splitMonthData(path):
 
                         i += 1
 
+
 # Samples a specified number of events from a raw data file
 def sampleData(path, numOfEvents):
     with open(path, 'r') as f:
@@ -87,6 +100,24 @@ def sampleData(path, numOfEvents):
                     new_f1.write(line)
 
                 i += 1
+
+
+# Samples a specified number of events from a raw data file
+def samplePickledData(path, numOfEvents):
+    eventList = []
+    with(open(path, mode='rb')) as f:
+        i=0
+        while i < numOfEvents:
+            try:
+                eventList.append(pickle.load(f))
+            except EOFError:
+                print("file read to end")
+                return None,-1
+
+            i+=1
+    with open(path + "_sample.out", 'wb+') as new_f1:
+        for event in eventList:
+            pickle.dump(event,new_f1)
 
 
 def writeUsersEventsDistToCsv(usersEventsPerSession, month):
@@ -167,8 +198,7 @@ def getServer(port, db_num):
 
 
 # Save all the sessions of a specific user into the database
-def saveUserSessionToDb(userId, userSessions, server_sessions,server_users):
-    pickled_objects=[]
+def saveUserSessionsToDb(userId, userSessions,server_sessions, server_users):
     pipe_sessions = server_sessions.pipeline()
     pipe_users = server_users.pipeline()
     for session in userSessions:
@@ -179,6 +209,20 @@ def saveUserSessionToDb(userId, userSessions, server_sessions,server_users):
     pipe_sessions.execute()
     pipe_users.execute()
 
+
+# Save all the sessions of a specific user into the database
+def multiple_saveUserSessionsToDb(userId, userSessions, labels_dict, server_sessions, server_users):
+    pipe_sessions = server_sessions.pipeline()
+    pipe_users = server_users.pipeline()
+    for session in userSessions:
+        session["isBuySession"] = labels_dict[str(session["sessionId"])]
+        del session["sessionId"]
+        pickled_object = pickle.dumps(session)
+        pipe_sessions.rpush(userId,pickled_object)
+        pipe_users.rpush("users",userId)
+
+    pipe_sessions.execute()
+    pipe_users.execute()
 
 # Extracts all the sessions of the specified user from the server's instance
 def getUserSessionsFromDbByUserId(userId, server):
@@ -244,8 +288,8 @@ def appendDictToFile(dict, fileName):
 
 
 # Reads a batch of keys(usernames) from the server and returns the updated cursor value
-def readKeysBatchFromServer(cursor):
-    server = getServer(6379,8)
+def readKeysBatchFromServer(cursor,month):
+    server = getServer(6379,month)
     cursor,sessionsBatch = server.scan(cursor=cursor,match = None, count=500)
     return cursor, sessionsBatch
 
@@ -268,22 +312,25 @@ def dictToCsv(dictPath, csvFileName):
 
 # Builds csv file from the database (one csv for tmp users and one for registered users)
 def buildCsvFromDb(server, month):
-    cursor, sessionBatch = readKeysBatchFromServer(0)
+    cursor, sessionBatch = readKeysBatchFromServer(0, month)
     keys = encodeKeys(sessionBatch)
     regUsersSessions, tmpUsersSessions = getValuesFromDb(keys, server)
 
+    global reg_users_sessions
+    global tmp_users_sessions
     global numOfUsers
     numOfUsers+= len(keys)
 
     month = str(month)
     appendDfToFile(regUsersSessions, "reg_" + month)
     appendDfToFile(tmpUsersSessions, "tmp_" + month)
-    while cursor != 0 and numOfUsers < 200000:
+    while cursor != 0:
 
         numOfUsers += len(keys)
         print("Number Of Users Read Sessions: "+ str(numOfUsers))
-        cursor, sessionBatch = readKeysBatchFromServer(cursor)
+        cursor, sessionBatch = readKeysBatchFromServer(cursor, month)
         keys = encodeKeys(sessionBatch)
+
         regUsersSessions, tmpUsersSessions = getValuesFromDb(keys, server)
         appendDfToFile(regUsersSessions, "reg_" + month)
         appendDfToFile(tmpUsersSessions, "tmp_" + month)
@@ -424,25 +471,28 @@ def get_mode(vector):
 # Extracts only the basket sessions from the dataframe
 def getBasketDataFrame(month,user_type = "reg", path="C:\\Users\\kulikr\\Desktop\\BasketSessions\\DataCsv\\"):
     df = pd.read_csv(path+user_type+"_"+str(month))
-    len(df)
+    print(len(df))
     columns_list = [col for col in df.columns if "vector" not in col]
     columns_list = [col for col in columns_list if "Vector" not in col]
     columns_list.remove('Unnamed: 0')
     df = df[columns_list]
     df_basket = df.loc[df["isBasketSession"] == True]
-    # csv_error = csv_basket.loc[csv_basket["isBasketSession"] == False]
-    # print("csv len:"+str(len(csv)))
     print("csv basket len:"+str(len(df_basket.index)))
-    # print("csv false in basket len:"+str(len(csv_error)))
     del df_basket["basketBuyDwell"]
     del df_basket["isBasketSession"]
+    if 'b_numberOfBasketEvents' in df_basket.columns:
+        del df_basket['b_numberOfBasketEvents']
+    if 'maximalBoughtItemPrice' in df_basket.columns:
+        del df_basket['maximalBoughtItemPrice']
     basket_features = {"timeToFirstBasket", "AvgBasketDwell", "maxBasketDwell", "basketPrice", "minBasketDwell",
                        "numOfBasketEvents", "numberOfBasketEvents"}
     rename_dict ={}
     for feature in basket_features:
         rename_dict[feature]="b_"+feature
     df_basket.rename(columns=rename_dict, inplace=True)
+    print(df_basket.columns)
     return df_basket
+
 
 def getGeneralDataFrame(month):
     csv = pd.read_csv("C:\\Users\\kulikr\\Desktop\\BasketSessions\\tmp_"+str(month))
@@ -453,9 +503,20 @@ def getGeneralDataFrame(month):
     csv_general = csv[general_features]
 
 
-
 def ensure_dir(file_path):
     directory_in_str =os.getcwd()+file_path
     print(directory_in_str)
     if not os.path.isdir(directory_in_str):
         os.makedirs(directory_in_str)
+
+
+def writeSessionsToFile(sessions, month):
+    with open("sessions_"+str(month)+".pickle", mode="ab+") as f:
+        for key, value in sessions.items():
+            pickle.dump(value,f)
+
+    #     with open("events_"+month+".csv","wb") as f:
+    #         for i in range(len(eventList)):
+    #             event = eventList.pop()
+    #             pickle.dump(event,f)
+

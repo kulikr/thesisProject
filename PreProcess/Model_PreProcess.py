@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import sklearn.preprocessing as pre
+from sklearn.feature_selection import SelectFromModel
 import sys
 import re
 
@@ -46,6 +47,48 @@ def process_ordinal(train, test, column_name, map_array):
     test[column_name].replace(map, inplace=True)
 
     return train, test
+
+
+def process_categorical(train, column_name, categorical_columns):
+    if column_name in categorical_columns:
+        train[column_name] = train[column_name].astype(str)
+
+
+    # replace NA with a dummy variable
+    train[column_name] = train[column_name].fillna('_missing')
+
+
+    # extract categories for column labels
+    # note that .unique() extracts the labels as a numpy array
+    labels_train = train[column_name].unique()
+    labels_train.sort(axis=0)
+
+    # transform text classifications to numerical id
+    encoder = pre.LabelEncoder()
+    cat_train = train[column_name]
+    cat_train_encoded = encoder.fit_transform(cat_train)
+
+
+    # apply onehotencoding
+    onehotencoder = pre.OneHotEncoder()
+    cat_train_1hot = onehotencoder.fit_transform(cat_train_encoded.reshape(-1, 1))
+
+    # append column header name to each category listing
+    # note the iteration is over a numpy array hence the [...] approach
+    labels_train[...] = column_name + '_' + labels_train[...]
+
+    # convert sparse array to pandas dataframe with column labels
+    df_train_cat = pd.DataFrame(cat_train_1hot.toarray(), columns=labels_train)
+
+    train_new = pd.concat([train.reset_index(),df_train_cat.reset_index()], axis=1)
+    print(train_new.shape)
+    # concatenate the sparse set with the rest of our training data
+
+    # delete original column from training data
+    del train_new[column_name]
+    del train_new['index']
+
+    return train_new
 
 
 def process_categorical(train, test, column_name, categorical_columns):
@@ -122,15 +165,16 @@ def remove_lowDeviation(train, predictors,treshold=0.045):
     return res
 
 
-def remove_lowImportance(train, predictors,treshold=0.045):
+def remove_lowImportance(train, predictors,treshold=0.02):
     res=[]
+
     for column in predictors:
         column_target = train[[column,'isBuySession']]
-        p=column_target.corr('pearson')["isBuySession"][0]
-        k=column_target.corr('kendall')["isBuySession"][0]
-        s=column_target.corr('spearman')["isBuySession"][0]
+        p=abs(column_target.corr('pearson')["isBuySession"][0])
+        k=abs(column_target.corr('kendall')["isBuySession"][0])
+        s=abs(column_target.corr('spearman')["isBuySession"][0])
         cor=(p+k+s)/3
-        if -1*treshold<cor and cor<treshold:
+        if cor<treshold:
             print("Removed Feature - " + column + " - Low Correlation to Target")
             continue
         res.append(column)
@@ -175,3 +219,67 @@ def features_selection(train,predictors,tresh_deviation,tresh_importance,tresh_s
     print(len(predictors))
 
     return predictors
+
+
+
+def process_categorical_train_only(train, column_name, column_values):
+    # replace NA with a dummy variable
+    train[column_name] = train[column_name].fillna('_missing')
+
+    # extract categories for column labels
+    # note that .unique() extracts the labels as a numpy array
+    labels_train = np.array(column_values)
+    labels_train= labels_train.astype(object)
+    labels_train.sort(axis=0)
+
+    # for column_value in column_values:
+    #     if column_value not in labels_train:
+    #         if column_name == "eventType":
+    #             train[train[column_name]==column_value]='click'
+    #         else:
+    #             train[train[column_name]==column_value]='x'
+    # i=0
+    # index = []
+    # for label in labels_train:
+    #     if label not in column_values:
+    #         index.append(i)
+    #         if column_name == "eventType":
+    #             train[train[column_name]==label]='click'
+    #         else:
+    #             train[train[column_name]==label]='x'
+    #     i+=1
+    #
+    # labels_train = np.delete(labels_train,index)
+
+
+    # transform text classifications to numerical id
+    encoder = pre.LabelEncoder()
+    cat_train = train[column_name]
+    encoder.fit(labels_train)
+    cat_train_encoded = encoder.transform(cat_train)
+    print(cat_train_encoded)
+
+
+    # apply onehotencoding
+    onehotencoder = pre.OneHotEncoder()
+    onehotencoder.fit(np.array([i for i in range(len(column_values))]).reshape(-1,1))
+    cat_train_1hot = onehotencoder.transform(cat_train_encoded.reshape(-1, 1))
+
+    # append column header name to each category listing
+    # note the iteration is over a numpy array hence the [...] approach
+    labels_train[...] = column_name + '_' + labels_train[...]
+
+    # convert sparse array to pandas dataframe with column labels
+    df_train_cat = pd.DataFrame(cat_train_1hot.toarray(), columns=labels_train)
+
+    train_new = pd.concat([train.reset_index(),df_train_cat.reset_index()], axis=1)
+    print(train_new.shape)
+    print(train_new.head())
+    # concatenate the sparse set with the rest of our training data
+
+
+    # delete original column from training data
+    del train_new[column_name]
+    del train_new['index']
+
+    return train_new
